@@ -16,42 +16,66 @@ Turbinas=DataFrame(Tur, vec(headerTur));
 Rec,headerRec=readdlm("Receptores" * ".txt",'\t', Float64, '\n',skipstart=0,header=true);
 Receptores=DataFrame(Rec, vec(headerRec));
 
-Modos = Dict() 
+Modos_T1 = Dict() 
 for i in 1:16
-    Modo,header=readdlm("N175 6.8 Modo "*string(i)*".txt",'\t', '\n',header=true);
-    Modos[i]= DataFrame(Modo, vec(header))
+    Modo,header=readdlm("Ruido T1/T1 6800 Modo "*string(i-1)*".txt",'\t', '\n',header=true);
+    Modos_T1[i]= DataFrame(Modo, vec(header))
 end
 
-Energias = Dict() 
+Modos_T2 = Dict() 
+for i in 1:10
+    Modo,header=readdlm("Ruido T2/T2 7200 Modo "*string(i-1)*".txt",'\t', '\n',header=true);
+    Modos_T2[i]= DataFrame(Modo, vec(header))
+end
+
+Energias_T1 = Dict() 
 for i in 1:16
-    Energia,header_energia=readdlm("Energia Modo "*string(i)*".txt",'\t', '\n',header=true);
-    Energias[i]= DataFrame(Energia, vec(header_energia))
+    Energia,header_energia=readdlm("Energía T1/T1 6800 Modo "*string(i-1)*".txt",'\t', '\n',header=true);
+    Energias_T1[i]= DataFrame(Energia, vec(header_energia))
+end
+Energias_T2 = Dict() 
+for i in 1:10
+    Energia,header_energia=readdlm("Energía T2/T2 7200 Modo "*string(i-1)*".txt",'\t', '\n',header=true);
+    Energias_T2[i]= DataFrame(Energia, vec(header_energia))
 end
 
 N=length(Tur[:,1]); #numero turbinas
-J=length(Modos); #Modos de turbinas
+J1=length(Modos_T1); #Modos de turbina T1
+J2=length(Modos_T2); #Modos de turbinas T2
 K=length(Rec[:,1]); #Receptores
 
 vel=readdlm("Velocidad Viento" * ".txt",'\t', Float64, '\n',skipstart=5);
-x_val0=7.000210E+05;
-y_val0=5.850087E+06;
-x_val1=7.286210E+05;
-y_val1=5.873847E+06;
+x_val0=0;
+y_val0=0;
+x_val1=28600;
+y_val1=23760;
 x_length=length(vel[1,:])
 y_length=length(vel[:,1])
 densidad=1.192
-E=zeros(Float64, x_length, y_length,J);
-for j in 1:J
-    E[:,:,j]=readdlm("MapaEnergia"*string(j)*".csv",',',header=false);
+
+E1=zeros(Float64, x_length, y_length,J1);
+for j in 1:J1
+    E1[:,:,j]=readdlm("Mapa Energía T1/MapaEnergia T1 Modo "*string(j-1)*".csv",',',header=false);
 end
 
-R=zeros(Float64, x_length, y_length,J,K);
-for j in 1:J
+E2=zeros(Float64, x_length, y_length,J2);
+for j in 1:J2
+    E1[:,:,j]=readdlm("Mapa Energía T2/MapaEnergia T2 Modo "*string(j-1)*".csv",',',header=false);
+end
+
+R1=zeros(Float64, x_length, y_length,J1,K);
+for j in 1:J1
     for k in 1:K
-        R[:,:,j,k]=readdlm( "MapaRuido"*string(j)*"_receptor "*string(k)*".csv", ',',header=false);
+        R1[:,:,j,k]=readdlm("Mapa Ruido T1 octavas/MapaRuido_T1_Modo"*string(j-1)*"_receptor "*string(k)*"_octavas.csv", ',',header=false);
     end
 end
 
+R2=zeros(Float64, x_length, y_length,J2,K);
+for j in 1:J2
+    for k in 1:K
+        R2[:,:,j,k]=readdlm("Mapa Ruido T2 octavas/MapaRuido_T2_Modo"*string(j-1)*"_receptor "*string(k)*"_octavas.csv", ',',header=false);
+    end
+end
 div_x=50;
 div_y=50;
 x_step=floor(x_length/div_x);

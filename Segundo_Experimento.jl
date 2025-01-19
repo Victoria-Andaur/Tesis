@@ -80,24 +80,23 @@ div_x=50;
 div_y=50;
 x_step=floor(x_length/div_x);p
 y_step=floor(y_length/div_y);
-modelo = Model(optimizer_with_attributes(() -> Gurobi.Optimizer(GUROBI_ENV)))
-#set_silent(modelo)
-@variable(modelo,0<=x[1:div_x,1:div_y,1:J]<=1 ,Bin);
-@objective(modelo, Max, sum(sum(sum(E1[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j]*x[ix,iy,j] for ix in 1:div_x ) for iy in 1:div_y) for j in 1:J1));
+modelo1 = Model(optimizer_with_attributes(() -> Gurobi.Optimizer(GUROBI_ENV)))
+@variable(modelo1,0<=x[1:div_x,1:div_y,1:J1]<=1 ,Bin);
+@objective(modelo1, Max, sum(sum(sum(E1[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j]*x[ix,iy,j] for ix in 1:div_x ) for iy in 1:div_y) for j in 1:J1));
 for ix in 1:div_x
     for iy in 1:div_y
-        @constraint(modelo,sum(x[ix,iy,:])<=1)
+        @constraint(modelo1,sum(x[ix,iy,:])<=1)
     end
 end
-for j in 1:J
-    @constraint(modelo,sum(x[:,:,j])<=30)
+for j in 1:J1
+    @constraint(modelo1,sum(x[:,:,j])<=30)
 end
 
 for k in 1:K
-    @constraint(modelo,sum(sum(sum(R1[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j,k]*x[ix,iy,j] for ix in 1:div_x) for iy in 1:div_y) for j in 1:J1)<=40)
+    @constraint(modelo1,sum(sum(sum(R1[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j,k]*x[ix,iy,j] for ix in 1:div_x) for iy in 1:div_y) for j in 1:J1)<=40)
 end
 
-@elapsed optimize!(modelo)
+@elapsed optimize!(modelo1)
 
 Mx=value.(x);
 

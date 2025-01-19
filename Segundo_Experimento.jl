@@ -165,16 +165,16 @@ modelo_2 = Model(optimizer_with_attributes(() -> Gurobi.Optimizer(GUROBI_ENV)))
 num_var=length(Indices)
 #set_silent(modelo)
 @variable(modelo_2,0<=x[1:num_var,1:num_var,1:J]<=1, Bin );
-@objective(modelo_2, Max, sum(sum(sum(E[ix,iy,j]*x[index,index,j] for (index,(ix,iy)) in enumerate(Indices))) for j in 1:J));
+@objective(modelo_2, Max, sum(sum(sum(E1[ix,iy,j]*x[index,index,j] for (index,(ix,iy)) in enumerate(Indices))) for j in 1:J1));
 for valor in 1:num_var
     @constraint(modelo_2,sum(x[valor,valor,:])<=1)
 end
-for j in 1:J
+for j in 1:J1
     @constraint(modelo_2,sum(x[:,:,j])<=30)
 end
 
 for k in 1:K
-    @constraint(modelo_2,sum(sum(sum(R[ix,iy,j,k]*x[index,index,j] for (index,(ix,iy)) in enumerate(Indices))) for j in 1:J)<=40)
+    @constraint(modelo_2,sum(sum(sum(R[ix,iy,j,k]*x[index,index,j] for (index,(ix,iy)) in enumerate(Indices))) for j in 1:J1)<=40)
 end
 
 @elapsed optimize!(modelo_2)

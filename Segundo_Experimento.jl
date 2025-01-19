@@ -30,12 +30,12 @@ end
 
 Energias_T1 = Dict() 
 for i in 1:16
-    Energia,header_energia=readdlm("Energía T1/T1 6800 Modo "*string(i-1)*".txt",'\t', '\n',header=true);
+    Energia,header_energia=readdlm("Energía T1/T1 6800 Modo "*string(i-1)*" Energia.txt",'\t', '\n',header=true);
     Energias_T1[i]= DataFrame(Energia, vec(header_energia))
 end
 Energias_T2 = Dict() 
 for i in 1:10
-    Energia,header_energia=readdlm("Energía T2/T2 7200 Modo "*string(i-1)*".txt",'\t', '\n',header=true);
+    Energia,header_energia=readdlm("Energía T2/T2 7200 Modo "*string(i-1)*" Energia.txt",'\t', '\n',header=true);
     Energias_T2[i]= DataFrame(Energia, vec(header_energia))
 end
 

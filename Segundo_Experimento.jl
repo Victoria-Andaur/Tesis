@@ -60,7 +60,7 @@ end
 
 E2=zeros(Float64, x_length, y_length,J2);
 for j in 1:J2
-    E1[:,:,j]=readdlm("Mapa Energía T2/MapaEnergia T2 Modo "*string(j-1)*".csv",',',header=false);
+    E2[:,:,j]=readdlm("Mapa Energía T2/MapaEnergia T2 Modo "*string(j-1)*".csv",',',header=false);
 end
 
 R1=zeros(Float64, x_length, y_length,J1,K);
@@ -73,12 +73,23 @@ end
 R2=zeros(Float64, x_length, y_length,J2,K);
 for j in 1:J2
     for k in 1:K
-        R2[:,:,j,k]=readdlm("Mapa Ruido T2 octavas/MapaRuido_T2_Modo"*string(j-1)*"_receptor "*string(k)*"_octavas.csv", ',',header=false);
+        filepath = "Mapa Ruido T2 octavas/MapaRuido_T2_Modo" * string(j-1) * "_receptor " * string(k) * "_octavas.csv"
+        if isfile(filepath)
+            try
+                R2[:,:,j,k] = readdlm(filepath, ',', header=false)
+            catch e
+                println("Error al leer el archivo $filepath: $e")
+            end
+        else
+            println("El archivo no existe: $filepath")
+        end
     end
 end
+
+
 div_x=50;
 div_y=50;
-x_step=floor(x_length/div_x);p
+x_step=floor(x_length/div_x);
 y_step=floor(y_length/div_y);
 modelo1 = Model(optimizer_with_attributes(() -> Gurobi.Optimizer(GUROBI_ENV)))
 @variable(modelo1,0<=x[1:div_x,1:div_y,1:J1]<=1 ,Bin);
@@ -92,20 +103,47 @@ for j in 1:J1
     @constraint(modelo1,sum(x[:,:,j])<=30)
 end
 
+
 for k in 1:K
-    @constraint(modelo1,sum(sum(sum(R1[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j,k]*x[ix,iy,j] for ix in 1:div_x) for iy in 1:div_y) for j in 1:J1)<=40)
+    @constraint(modelo1,sum(sum(sum(10^((abs(R1[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j,k]))/10)*x[ix,iy,j] for ix in 1:div_x) for iy in 1:div_y) for j in 1:J1)<=10^4)
 end
 
 @elapsed optimize!(modelo1)
 
 Mx=value.(x);
 
+div_x=50;
+div_y=50;
+x_step=floor(x_length/div_x);
+y_step=floor(y_length/div_y);
+modelo2 = Model(optimizer_with_attributes(() -> Gurobi.Optimizer(GUROBI_ENV)))
+@variable(modelo2,0<=z[1:div_x,1:div_y,1:J2]<=1 ,Bin);
+@objective(modelo2, Max, sum(sum(sum(E2[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j]*z[ix,iy,j] for ix in 1:div_x ) for iy in 1:div_y) for j in 1:J2));
+for ix in 1:div_x
+    for iy in 1:div_y
+        @constraint(modelo2,sum(z[ix,iy,:])<=1)
+    end
+end
+for j in 1:J2
+    @constraint(modelo2,sum(z[:,:,j])<=30)
+end
+
+
+for k in 1:K
+    @constraint(modelo2,sum(sum(sum(10^(((R2[round(Int,ix*x_step-x_step+1),round(Int,iy*y_step-y_step+1),j,k]/10)))*z[ix,iy,j] for ix in 1:div_x) for iy in 1:div_y) for j in 1:J2)<=10^4)
+end
+
+@elapsed optimize!(modelo2)
+
+Mz=value.(z);
+
+
 Turbinas_solucion= DataFrame("X [m]" => Float64[], "Y [m]" => Float64[], "NUM" => Int[], "MODO" => Int[],"Index_x"=> Int[],"Index_y"=> Int[])
 cont=1;
 for ix in 1:div_x
     for iy in 1:div_y
-        for k in 1:16
-            if Mx[ix,iy,k]!=0
+        for k in 1:K
+            if Mz[ix,iy,k]!=0
                 push!(Turbinas_solucion, ((x_val0+((ix-1)*x_step+1)*(x_val1-x_val0)/x_length), (y_val0+((iy-1)*y_step+1)*(y_val1-y_val0)/y_length), cont,k,(ix-1)*x_step+1,(iy-1)*y_step+1))
                 cont+=1
             end
@@ -125,14 +163,14 @@ function ruido_receptores(ruido,Recep,Turb)
         print("El ruido que siente el receptor ")
         print(k)
         print(" es ")
-        print(round(sum(ruido[Turb."Index_x"[i],Turb."Index_y"[i],Turb."MODO"[i],k] for i in 1:length(Turb."Index_x")),digits=2))
+        print(round(10*log10(sum(10^(ruido[Turb."Index_x"[i],Turb."Index_y"[i],Turb."MODO"[i],k]/10) for i in 1:length(Turb."Index_x"))),digits=2))
         print("\n")
     end
 end
 
 
 graficar_solucion(Turbinas_solucion,Receptores)
-ruido_receptores(R,Receptores,Turbinas_solucion)
+ruido_receptores(R2,Receptores,Turbinas_solucion)
 
 # Función para generar y filtrar variaciones válidas
 function valid_variations(x, y,val_sep=1)

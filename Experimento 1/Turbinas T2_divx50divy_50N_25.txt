@@ -1,0 +1,45 @@
+\begin{table}[ht]
+    \begin{tabular}{
+        >{\columncolor[HTML]{808080}}l ll}
+{\color[HTML]{FFFFFF} \textbf{Método   utlizado}} & \multicolumn{1}{r}{\cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} Grilla 50x50}} & \multicolumn{1}{r}{\cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} }} \\
+    {\color[HTML]{FFFFFF} \textbf{Número de turbinas máximas}} & {\color[HTML]{595959} 25} & {\color[HTML]{595959} } \\
+        {\color[HTML]{FFFFFF} \textbf{Número de turbinas agegadas}} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} 25} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} } \\
+            {\color[HTML]{FFFFFF} \textbf{Energía producida}} & {\color[HTML]{595959} 58928.8} & {\color[HTML]{595959} MWh} \\
+                {\color[HTML]{FFFFFF} \textbf{Tiempo de cálculo}} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} 0.562} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} s}\\
+                    \hline\hline
+                        \end{tabular}
+                            \centering
+\end{table}
+    
+        \begin{table}[ht]
+            \begin{tabular}{cccc}
+                \rowcolor[HTML]{808080} 
+                    \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Receptor}}} & {\color[HTML]{FFFFFF} \textbf{Pos\_X}} & {\color[HTML]{FFFFFF} \textbf{Pos\_Y}} & {\color[HTML]{FFFFFF} \textbf{dB}} \\
+                        \rowcolor[HTML]{F2F2F2} 
+                            {\color[HTML]{595959} 1} & {\color[HTML]{595959} 9005} & {\color[HTML]{595959} 11533} & {\color[HTML]{595959} 16.35} \\
+                                {\color[HTML]{595959} 2} & {\color[HTML]{595959} 10026} & {\color[HTML]{595959} 10354} & {\color[HTML]{595959} 14.91} \\
+                                    \rowcolor[HTML]{F2F2F2} 
+                                        {\color[HTML]{595959} 3} & {\color[HTML]{595959} 9407} & {\color[HTML]{595959} 12307} & {\color[HTML]{595959} 17.68} \\
+                                            {\color[HTML]{595959} 4} & {\color[HTML]{595959} 12743} & {\color[HTML]{595959} 12591} & {\color[HTML]{595959} 16.45} \\
+                                                \rowcolor[HTML]{F2F2F2} 
+                                                    {\color[HTML]{595959} 5} & {\color[HTML]{595959} 16483} & {\color[HTML]{595959} 11370} & {\color[HTML]{595959} 13.98} \\
+                                                        {\color[HTML]{595959} 6} & {\color[HTML]{595959} 19317} & {\color[HTML]{595959} 10737} & {\color[HTML]{595959} 13.98} \\
+                                                            \rowcolor[HTML]{F2F2F2} 
+                                                                {\color[HTML]{595959} 7} & {\color[HTML]{595959} 18619} & {\color[HTML]{595959} 8284} & {\color[HTML]{595959} 13.98}\\
+                                                                    \hline\hline
+                                                                        \end{tabular}
+                                                                            \centering
+                                                                                \end{table}
+                                                                                        
+                                                                                            \begin{table}[H]
+                                                                                                \begin{tabular}{cccc}
+                                                                                                    \rowcolor[HTML]{808080} 
+                                                                                                        \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Turbina}}} & 
+\multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Pos\_X}}} & 
+\multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Pos\_Y}}} & 
+{\color[HTML]{FFFFFF} \textbf{Modo}}\\
+    {\color[HTML]{595959} 1} & {\color[HTML]{595959} 5072.9} & {\color[HTML]{595959} 483.3} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 2} & {\color[HTML]{595959} 5072.9} & {\color[HTML]{595959} 926.2} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 3} & {\color[HTML]{595959} 5072.9} & {\color[HTML]{595959} 1369.2} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 4} & {\color[HTML]{595959} 5072.9} & {\color[HTML]{595959} 2255.2} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 5} & {\color[HTML]{595959} 5632.1} & {\color[HTML]{595959} 1369.2} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 6} & {\color[HTML]{595959} 5632.1} & {\color[HTML]{595959} 1812.2} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 7} & {\color[HTML]{595959} 5632.1} & {\color[HTML]{595959} 2255.2} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 8} & {\color[HTML]{595959} 11783.5} & {\color[HTML]{595959} 2255.2} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 9} & {\color[HTML]{595959} 16816.5} & {\color[HTML]{595959} 9342.9} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 10} & {\color[HTML]{595959} 16816.5} & {\color[HTML]{595959} 9785.9} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 11} & {\color[HTML]{595959} 16816.5} & {\color[HTML]{595959} 10228.9} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 12} & {\color[HTML]{595959} 17375.7} & {\color[HTML]{595959} 10228.9} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 13} & {\color[HTML]{595959} 18494.1} & {\color[HTML]{595959} 6242.0} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 14} & {\color[HTML]{595959} 18494.1} & {\color[HTML]{595959} 6685.0} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 15} & {\color[HTML]{595959} 18494.1} & {\color[HTML]{595959} 7128.0} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 16} & {\color[HTML]{595959} 19612.6} & {\color[HTML]{595959} 12443.8} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 17} & {\color[HTML]{595959} 20171.8} & {\color[HTML]{595959} 11557.8} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 18} & {\color[HTML]{595959} 22408.7} & {\color[HTML]{595959} 4913.1} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 19} & {\color[HTML]{595959} 22408.7} & {\color[HTML]{595959} 5356.1} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 20} & {\color[HTML]{595959} 23527.1} & {\color[HTML]{595959} 4027.1} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 21} & {\color[HTML]{595959} 26323.2} & {\color[HTML]{595959} 9342.9} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 22} & {\color[HTML]{595959} 26323.2} & {\color[HTML]{595959} 9785.9} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 23} & {\color[HTML]{595959} 26323.2} & {\color[HTML]{595959} 10228.9} & {\color[HTML]{595959} 0} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 24} & {\color[HTML]{595959} 26882.4} & {\color[HTML]{595959} 8456.9} & {\color[HTML]{595959} 0} \\ {\color[HTML]{595959} 25} & {\color[HTML]{595959} 26882.4} & {\color[HTML]{595959} 8899.9} & {\color[HTML]{595959} 0} \\ \hline\hline
+        \end{tabular}
+                \centering
+                        \end{table}
+                                

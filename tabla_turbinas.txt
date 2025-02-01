@@ -1,0 +1,10 @@
+                    \begin{table}[H]
+\begin{tabular}{cccc}
+        \rowcolor[HTML]{808080} 
+                \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Turbina}}} & 
+\multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Pos\_X}}} & 
+\multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Pos\_Y}}} & 
+{\color[HTML]{FFFFFF} \textbf{Modo}} \\
+{\color[HTML]{595959} 1} & {\color[HTML]{595959} 599.2} & {\color[HTML]{595959} 4027.1} & {\color[HTML]{595959} 1} \\ \rowcolor[HTML]{F2F2F2} {\color[HTML]{595959} 2} & {\color[HTML]{595959} 2276.8} & {\color[HTML]{595959} 4470.1} & {\color[HTML]{595959} 3} \\ \hline\hline
+        \end{tabular}
+                \end{table}

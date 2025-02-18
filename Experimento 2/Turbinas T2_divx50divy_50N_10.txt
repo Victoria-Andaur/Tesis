@@ -1,40 +1,40 @@
-                            \begin{table}[ht]
-                                \begin{tabular}{
-                                    >{\columncolor[HTML]{808080}}l ll}
+    \begin{table}[ht]
+        \begin{tabular}{
+            >{\columncolor[HTML]{808080}}l ll}
 {\color[HTML]{FFFFFF} \textbf{Método   utlizado}} & \multicolumn{1}{r}{\cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} Grilla 50x50}} & \multicolumn{1}{r}{\cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} }} \\
     {\color[HTML]{FFFFFF} \textbf{Número de turbinas máximas}} & {\color[HTML]{595959} 10} & {\color[HTML]{595959} } \\
         {\color[HTML]{FFFFFF} \textbf{Número de turbinas agegadas}} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} 10} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} } \\
             {\color[HTML]{FFFFFF} \textbf{Energía producida}} & {\color[HTML]{595959} 19273.0} & {\color[HTML]{595959} MWh} \\
-                {\color[HTML]{FFFFFF} \textbf{Tiempo de cálculo}} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} 0.166} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} s}\\
+                {\color[HTML]{FFFFFF} \textbf{Tiempo de cálculo}} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} 0.269} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{595959} s}\\
                     \hline\hline
                         \end{tabular}
                             \centering
-\end{table}
-
-\begin{table}[ht]
-    \begin{tabular}{cccc}
-        \rowcolor[HTML]{808080} 
-            \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Receptor}}} & {\color[HTML]{FFFFFF} \textbf{Pos\_X}} & {\color[HTML]{FFFFFF} \textbf{Pos\_Y}} & {\color[HTML]{FFFFFF} \textbf{dB}} \\
-                \rowcolor[HTML]{F2F2F2} 
-                    {\color[HTML]{595959} 1} & {\color[HTML]{595959} 9005} & {\color[HTML]{595959} 11533} & {\color[HTML]{595959} 30.57} \\
-                        {\color[HTML]{595959} 2} & {\color[HTML]{595959} 10026} & {\color[HTML]{595959} 10354} & {\color[HTML]{595959} 39.36} \\
-                            \rowcolor[HTML]{F2F2F2} 
-                                {\color[HTML]{595959} 3} & {\color[HTML]{595959} 9407} & {\color[HTML]{595959} 12307} & {\color[HTML]{595959} 39.91} \\
-                                    {\color[HTML]{595959} 4} & {\color[HTML]{595959} 12743} & {\color[HTML]{595959} 12591} & {\color[HTML]{595959} 39.26} \\
-                                        \rowcolor[HTML]{F2F2F2} 
-                                            {\color[HTML]{595959} 5} & {\color[HTML]{595959} 16483} & {\color[HTML]{595959} 11370} & {\color[HTML]{595959} 21.91} \\
-                                                {\color[HTML]{595959} 6} & {\color[HTML]{595959} 19317} & {\color[HTML]{595959} 10737} & {\color[HTML]{595959} 13.33} \\
-                                                    \rowcolor[HTML]{F2F2F2} 
-                                                        {\color[HTML]{595959} 7} & {\color[HTML]{595959} 18619} & {\color[HTML]{595959} 8284} & {\color[HTML]{595959} 12.73}\\
-                                                            \hline\hline
-                                                                \end{tabular}
-                                                                    \centering
-                                                                        \end{table}
-                                                                                
-                                                                                    \begin{table}[H]
-                                                                                        \begin{tabular}{cccc}
-                                                                                            \rowcolor[HTML]{808080} 
-                                                                                                \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Turbina}}} & 
+                                \end{table}
+                                    
+                                        \begin{table}[ht]
+                                            \begin{tabular}{cccc}
+                                                \rowcolor[HTML]{808080} 
+                                                    \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Receptor}}} & {\color[HTML]{FFFFFF} \textbf{Pos\_X}} & {\color[HTML]{FFFFFF} \textbf{Pos\_Y}} & {\color[HTML]{FFFFFF} \textbf{dB}} \\
+                                                        \rowcolor[HTML]{F2F2F2} 
+                                                            {\color[HTML]{595959} 1} & {\color[HTML]{595959} 9005} & {\color[HTML]{595959} 11533} & {\color[HTML]{595959} 28.67} \\
+                                                                {\color[HTML]{595959} 2} & {\color[HTML]{595959} 10026} & {\color[HTML]{595959} 10354} & {\color[HTML]{595959} 40.48} \\
+                                                                    \rowcolor[HTML]{F2F2F2} 
+                                                                        {\color[HTML]{595959} 3} & {\color[HTML]{595959} 9407} & {\color[HTML]{595959} 12307} & {\color[HTML]{595959} 28.39} \\
+                                                                            {\color[HTML]{595959} 4} & {\color[HTML]{595959} 12743} & {\color[HTML]{595959} 12591} & {\color[HTML]{595959} 36.5} \\
+                                                                                \rowcolor[HTML]{F2F2F2} 
+                                                                                    {\color[HTML]{595959} 5} & {\color[HTML]{595959} 16483} & {\color[HTML]{595959} 11370} & {\color[HTML]{595959} 19.63} \\
+                                                                                        {\color[HTML]{595959} 6} & {\color[HTML]{595959} 19317} & {\color[HTML]{595959} 10737} & {\color[HTML]{595959} 11.96} \\
+                                                                                            \rowcolor[HTML]{F2F2F2} 
+                                                                                                {\color[HTML]{595959} 7} & {\color[HTML]{595959} 18619} & {\color[HTML]{595959} 8284} & {\color[HTML]{595959} 11.61}\\
+                                                                                                    \hline\hline
+                                                                                                        \end{tabular}
+                                                                                                            \centering
+                                                                                                                \end{table}
+                                                                                                                        
+                                                                                                                            \begin{table}[H]
+                                                                                                                                \begin{tabular}{cccc}
+                                                                                                                                    \rowcolor[HTML]{808080} 
+                                                                                                                                        \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Nº Turbina}}} & 
 \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Pos\_X}}} & 
 \multicolumn{1}{c}{\cellcolor[HTML]{808080}{\color[HTML]{FFFFFF} \textbf{Pos\_Y}}} & 
 {\color[HTML]{FFFFFF} \textbf{Modo}}\\
